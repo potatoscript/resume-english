@@ -120,7 +120,18 @@
       }
     }
 
+    /* Radar Chart Container */
+    .radar-chart-container {
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    canvas {
+      width: 80% !important;
+      height: auto !important;
+    }
   </style>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 
@@ -201,7 +212,6 @@
         <li><strong>Career Transition:</strong> After 10 years as a Product Design Engineer, I transitioned into a System Development Engineer role, contributing to the development of systems that support production automation and data management.</li>
       </ul>
 
-
     </section>
 
     <section>
@@ -211,6 +221,12 @@
       <strong>Tools</strong>: AutoCAD, Inventor, SolidWorks, Visual Studio, JupyterLab, Git, Docker, Azure<br>
       <strong>Databases</strong>: PostgreSQL, MySQL, Oracle, SQL Server, SQLite<br>
       <strong>Others</strong>: DevOps, Data analysis, Web server config (Apache, IIS)</p>
+    </section>
+
+    <!-- Radar Chart Section -->
+    <section class="radar-chart-container">
+      <h2 class="section-title">Technical Skills Radar</h2>
+      <canvas id="skillsRadarChart"></canvas>
     </section>
 
     <section>
@@ -230,6 +246,33 @@
       </ul>
     </section>
   </div>
+
+  <script>
+    // Radar Chart for Skills
+    const ctx = document.getElementById('skillsRadarChart').getContext('2d');
+    const skillsRadarChart = new Chart(ctx, {
+      type: 'radar',
+      data: {
+        labels: ['Python', 'C#', 'JavaScript', 'SQL', 'Django', 'React.js', 'Docker'],
+        datasets: [{
+          label: 'Technical Skills',
+          data: [9, 8, 7, 8, 9, 7, 6], // Skill proficiency (scale of 1-10)
+          backgroundColor: 'rgba(255, 99, 132, 0.2)',
+          borderColor: 'rgba(255, 99, 132, 1)',
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scale: {
+          ticks: {
+            beginAtZero: true,
+            max: 10,
+            stepSize: 1
+          }
+        }
+      }
+    });
+  </script>
 
 </body>
 </html>
