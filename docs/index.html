@@ -120,15 +120,20 @@
       }
     }
 
-    /* Radar Chart Container */
-    .radar-chart-container {
-      text-align: center;
-      margin-top: 2rem;
-    }
-
     canvas {
       width: 80% !important;
       height: auto !important;
+    }
+    /* Radar Chart Section */
+    .radar-chart-container {
+      width: 100%;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    #skillsRadarChart {
+      width: 100%;
+      height: 200px;
     }
   </style>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -225,7 +230,7 @@
 
     <!-- Radar Chart Section -->
     <section class="radar-chart-container">
-      <h2 class="section-title">Technical Skills Radar</h2>
+      <h2 class="section-title">Programming Languages Proficiency</h2>
       <canvas id="skillsRadarChart"></canvas>
     </section>
 
@@ -256,7 +261,7 @@
         labels: ['Python', 'C#', 'JavaScript', 'SQL', 'Django', 'React.js', 'Docker'],
         datasets: [{
           label: 'Technical Skills',
-          data: [9, 8, 7, 8, 9, 7, 6], // Skill proficiency (scale of 1-10)
+          data: [8, 9, 10, 8, 6, 5, 5], // Skill proficiency (scale of 1-10)
           backgroundColor: 'rgba(255, 99, 132, 0.2)',
           borderColor: 'rgba(255, 99, 132, 1)',
           borderWidth: 1
